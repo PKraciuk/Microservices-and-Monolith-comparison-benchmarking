@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  gateway:
+    image: ghcr.io/microservices-benchmarking-11-kiop-2023/go-gateway:latest
+    build: services/gateway
+    ports:
+      - "5000:8080"
+    depends_on:
+      - search
+      - profile
+    networks:
+      - app-network
+  search:
+    image: ghcr.io/microservices-benchmarking-11-kiop-2023/go-search:latest
+    build: services/search
+    depends_on:
+      - geo
+      - rate
+    networks:
+      - app-network
+  profile:
+    image: ghcr.io/microservices-benchmarking-11-kiop-2023/go-profile:latest
+    build: services/profile
+    networks:
+      - app-network
+  geo:
+    image: ghcr.io/microservices-benchmarking-11-kiop-2023/go-geo:latest
+    build: services/geo
+    networks:
+      - app-network
+  rate:
+    image: ghcr.io/microservices-benchmarking-11-kiop-2023/go-rate:latest
+    build: services/rate
+    networks:
+      - app-network
+
+networks:
+  app-network:
