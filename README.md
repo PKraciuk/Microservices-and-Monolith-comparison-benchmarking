@@ -1,6 +1,6 @@
 # Performance and Scalability Analysis of Monolithic and Microservice Architectures
 
-This repository contains the codebase and benchmarking tools for a comprehensive comparative analysis of monolithic and microservice architectures as outlined in the master's thesis "A Comparative Analysis of the Performance and Scalability of Monolithic and Microservice Architectures."
+This repository contains the codebase and benchmarking tools for a comprehensive comparative analysis of monolithic and microservice architectures.
 
 ## Overview
 
